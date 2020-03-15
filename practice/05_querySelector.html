@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'container'>
+        <div>111</div>
+        <div>222</div>
+        <p>ppp</p>
+    </div>
+    <div id="main">hello</div>
+    <div class = 'a' type = 'text'>text</div>
+    <div class = 'a'>111</div>
+    <div class = 'b'>bbb</div>
+    <p class = 'p'><input type="radio" name="rating" value="life_changing"></p>
+
+	<script>
+    var main = document.querySelector('#main')
+    console.log(main)
+    // find the first element
+    var element = document.querySelector('.a');
+    console.log(element)
+    var elements = document.querySelectorAll('.a');
+    console.log(elements)
+    var divs = document.querySelectorAll('div')
+    console.log('divs',divs)
+    var attribute = document.querySelector([type = 'input'])
+    console.log('attribute',attribute)
+	</script>
+</body>
+</html>

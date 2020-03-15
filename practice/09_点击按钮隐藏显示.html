@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+        background-color: red;
+        width:200px;
+        height:200px;
+        }
+        .show {
+            display:block;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn" value="hidden">
+    <br>
+    <div id="box" class="">
+
+    </div>
+
+<script>
+    // 1.get element
+    // btn 是表单元素
+    var btn = document.querySelector('#btn');
+    var box = document.querySelector('#box');
+    var flag = 'hidden';
+    // 2.register event
+    btn.onclick = function(){
+        if (flag == 'show'){
+    // 3.modify element
+            btn.value = 'hidden';
+            box.className = 'show' 
+            flag = 'hidden';
+        }else{
+            // this --> btn
+            this.value = 'show';
+            box.className = 'hidden' 
+            flag = 'show';
+        }
+    }
+</script>
+</body>
+</html>

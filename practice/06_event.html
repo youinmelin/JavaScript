@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--    create a button-->
+<!--    can also use<button></button>-->
+    <input type = 'button' id ='btn' value="click">
+    <div id = 'main'> 111<div>
+
+<script>
+    // event
+    // 1.get element
+    var btn = document.querySelector('#btn');
+    console.log(btn);
+    // 2.register event
+    // event name:click
+    // event source: button
+    // event handle function 
+    btn.onclick = function(){
+        alert('hello');
+    }
+    
+    var div = document.querySelector('div')
+    div.onclick = function(){
+    div.textContent = '222'
+    }	
+</script>
+</body>
+</html>

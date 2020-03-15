@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--    create a button-->
+<!--    can also use<button></button>-->
+    <input type = 'button' id ='btn' value="click">
+    <br>
+    <div id = 'main'> 111<div>
+    <img src='images/a.jpg' id='mv' alt='' width='400' height='300'>
+
+<script>
+    // event
+    // 1.get element
+    var btn = document.querySelector('#btn');
+    var mv = document.querySelector('#mv');
+    var div = document.querySelector('div');
+    console.log(btn);
+    // 2.register event
+    // event name:click
+    // event source: button
+    // event handle function 
+    var flag = 2;
+    btn.onclick = function(){
+	// 3.change pic
+    	if (flag ==1){
+	    mv.src='images/a.jpg';
+	    //div.textContent ='111';
+	    flag = 2;
+	}
+	else{
+	    //div.textContent ='222';
+	mv.src='images/2.jpg';
+	flag = 1;
+	}
+    console.log(flag);
+    }
+    
+</script>
+</body>
+</html>

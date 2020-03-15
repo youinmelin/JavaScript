@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id = 'main'>hello</div>
+    <div>word</div>
+    <div>Nasa</div>
+    <p id = 'p'>test</p>
+    <span>span</span>
+	<script>
+    // type of divs is HTMLCollection
+    var divs = document.getElementsByTagName('div')
+    console.dir(divs)
+    console.log('_____________________')
+    for (var i = 0; i < divs.length; i++){
+    console.log(divs[i]);
+    }
+    console.log('_____________________')
+    for (var div in divs){
+    console.log(div, divs[div]);
+    }
+
+	</script>
+</body>
+</html>
