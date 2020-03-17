@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+        background-color: yellowgreen;
+        } 
+    </style>
+</head>
+<body>
+    <input type="button" value="set" id='btn'>
+    <select name=""  id="selCities">
+        <option value="1" >beijing</option>
+        <option value="2">shanghai</option>
+        <option value="3">hangzhou</option>
+        <option value="4">zhengzhou</option>
+        <option value="5">wuhan</option>
+    </select>
+    <script>
+        var btn = document.querySelector('#btn')
+        btn.onclick = function(){
+            var selcities = document.querySelector('#selCities')
+            console.log(selcities)
+            var selvalue = parseInt(Math.random()*5+1)
+            console.log(selvalue)
+            selcities.value = selvalue
+        }
+    </script>
+</body>
+</html>

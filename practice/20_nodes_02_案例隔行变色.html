@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="thename">
+        <li>golin</li>
+        <li>agile</li>
+        <li>Nasa</li>
+        <li>youinme</li>
+        <li>AOC</li>
+        <li>Malta</li>
+        <li>syntax</li>
+    </ul>
+    <script>
+        var thename = document.querySelector('#thename')
+        var lis = thename.children
+        console.log(lis)
+        flag = true
+        for(var oneli in lis){
+            console.log(lis[oneli])
+            if (flag){
+                lis[oneli].style.backgroundColor = 'yellow'
+                flag = false
+            }else{
+                flag = true
+            }
+        }
+    </script>
+</body>
+</html>

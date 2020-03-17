@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="button" value="button" id="btn">
+   <input type="button" value="disabled" id="btn2">
+   <br>
+    <input type="text" name="" id="txt" value="abc">
+
+    <script>
+        var btn = document.querySelector('#btn')
+        var btn2 = document.querySelector('#btn2')
+        btn.onclick = function(){
+            var text = document.querySelector('#txt')
+            console.log(txt.value)
+            console.log(txt.type)
+            console.log(txt.disabled)
+            text.value= 'able'
+            text.disabled = false
+        }
+        btn2.onclick = function(){
+            var text = document.querySelector('#txt')
+            text.value = 'disabled'
+            text.disabled = true
+        }
+    </script>
+</body>
+</html>

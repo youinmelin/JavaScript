@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='box'>
+        I'm a div.
+        <span>This is a span.</span>
+    </div>
+    <div id='box2'>
+    </div>
+    <div id='box3'>
+    </div>
+
+    <script>
+        var box = document.querySelector('#box')
+        var box2 = document.querySelector('#box2')
+        var box3 = document.querySelector('#box3')
+        // innerHTML  包括标签,原封不动的获取文本
+        console.dir(box.innerHTML)
+        // innerText  不包括标签,前后换行和空白都会过滤掉
+        console.dir(box.innerText)
+        console.dir(box.textContent)
+
+        box.innerHTML = 'innerHTML:&nbsp&nbsp <b>haha</b>ha'
+
+        box2.innerText = 'innerText:&nbsp&nbsp<b>haha</b>ha'
+
+        box3.textContent= 'textCpntent:&nbsp&nbsp<b>haha</b>ha'
+    </script>
+</body>
+</html>

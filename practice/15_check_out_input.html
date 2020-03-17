@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='', initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    username<input type="text" id="txtUserName"> <br>
+    password<input type="text" id="txtUserPassword"> <br>
+    <input type="button" value="login" id="btn">
+    <div id="div"></div>
+    <script>
+        var un = document.querySelector('#txtUserName')
+        var up = document.querySelector('#txtUserPassword')
+        var btn = document.querySelector('#btn')
+        var div = document.querySelector('div')
+        btn.onclick = function(){
+            console.log(un.value)
+            console.log(up.value)
+            console.log(up)
+            // 如果用户名不是3-6位，高亮显示文本框
+            if (un.value.length<3){
+                un.className = 'bg'
+                div.innerHTML = 'username is too short'
+            }else if( un.value.length>6){
+                un.className = 'bg'
+                div.innerHTML = 'username is too long'
+            }
+            else{
+                un.className = ''
+                div.innerHTML = ''
+
+            }
+        }
+    </script>
+</body>
+</html>

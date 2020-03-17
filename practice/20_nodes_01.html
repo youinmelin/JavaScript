@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='box'>
+        <span>span</span>
+        <p>p tag</p>
+        <!-- comment-->
+    </div>    
+    <script>
+        //节点的层次结构
+        //parentNode,childNodes
+        var box = document.querySelector('#box')
+        console.log(box.parentNode)
+        console.log(box.childNodes)
+        console.log(box.children)
+        for(var i = 0; i < box.childNodes.length; i++){
+            var node = box.childNodes[i]
+            // 元素节点nodeType == 1
+            if (node.nodeType == 1){
+                console.log(node)
+            }
+        }
+    </script>
+</body>
+</html>

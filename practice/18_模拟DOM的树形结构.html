@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="box">hello</div>
+   <p id="p">world</p>
+    <script>
+        var box = document.querySelector('#box')
+        // console.dir(box)
+        //创建具有相同属性的对象，构造函数
+        function Node(options) {
+            // if (options.className){
+            //     this.className = options.className
+            // }else{
+            //     this.className = ''
+            // }
+            this.className = options.className?options.className:''
+            this.textContent = options.textContent || ''
+            // 布尔类型运算符
+            this.title = options.title || ''
+            this.id = options.id || ''
+            // 与节点相关的属性
+            // 节点名称，如果是元素节点，就是标签的名称
+            this.nodeName = options.nodeName || ''
+            // 节点类型，对于元素节点，1：属性节点，2：文本节点 3：数值类型
+            this.nodeType= options.nodeType || 1 
+            // 节点值，如果是元素节点始终是null
+            this.nodeValue= options.nodeValue|| null
+            // child notes is a array
+            this.children= options.children || []
+
+        }
+        // create html node
+        var html = new Node({
+            nodeName:'html'
+        })
+        // create a node
+        var head = new Node({
+            nodeName : 'head'
+        })
+        var body = new Node({
+            nodeName : 'body'
+        })
+        // push method: add a item in a array 
+        html.children.push(head)
+        html.children.push(body)
+        var div = new Node({
+            nodeName : 'div'
+        })
+        var p = new Node({
+            nodeName : 'p'
+        })
+        body.children.push(div)
+        body.children.push(p)
+        console.dir(html)
+        // 在运行的时候，浏览西内部维护了一个DOM树
+
+    </script>
+</body>
+</html>
