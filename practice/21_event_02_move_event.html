@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="button" id="btn"> 
+    <input type="button" value="button" id="btn2"> 
+
+    <script>
+        var btn = document.querySelector('#btn')
+        btn.onclick = function(){
+            alert('hello world')
+            // move event
+            btn.onclick = null
+        }
+
+        var btn2 = document.querySelector('#btn2')
+        function btnClick(){
+            alert('hello')
+            btn2.removeEventListener('click',btnClick)
+        }
+        //如果想要移除事件，注册的时候不能使用匿名函数
+        btn2.addEventListener('click',btnClick)
+    </script>
+</body>
+<script>
+
+</script>
+</html>
