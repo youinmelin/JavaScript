@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            /* 设置表格边线收缩 */
+        #box table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+   <h1>topic</h1> 
+   <!-- <input type="button" id="btn" value="show">
+   <input type="button" id="btn2" value="show2"> -->
+   <div id="box">
+
+   </div>
+   <div id="box2"></div>
+   <img src="" alt="">
+   <script>
+    //    var s ={name:'zs',subject:'english',score:90}
+       var datas = [
+            {name:'zs',subject:'english',score:90},
+            {name:'ls',subject:'music',score:90},
+            {name:'ww',subject:'math',score:90},
+            {name:'zl',subject:'science',score:90}
+       ]
+       var box = document.querySelector('#box')
+       //1 create table
+       var table = document.createElement('table')
+       table.border = '1px'
+       table.wideh= '400px'
+       box.appendChild(table)
+       //2 create thead
+       var thead = document.createElement('thead')
+       table.appendChild(thead)
+       var tr = document.createElement('tr')
+       thead.appendChild(tr)
+       thead.style.height = '30px'
+       thead.style.width = '100px'
+       thead.style.backgroundColor = 'lightblue' 
+       var th = document.createElement('th')
+       tr.appendChild(th)
+        th.innerText='name'
+       var th = document.createElement('th')
+       tr.appendChild(th)
+       th.innerText='subject '
+       var th = document.createElement('th')
+       tr.appendChild(th)
+       th.innerText='score'
+       var th = document.createElement('th')
+       tr.appendChild(th)
+       th.innerText='operation'
+
+       //3 create data
+       var tbody = document.createElement('tbody')
+       table.appendChild(tbody)
+       tbody.style.textAlign = 'center'
+       for (var i = 0; i<datas.length; i++){
+            var tr = document.createElement('tr')
+            tbody.appendChild(tr) 
+            tr.style.backgroundColor = 'lightyellow'
+            for (var j in datas[i]){
+                var th = document.createElement('th')
+                tr.appendChild(th)
+                // th.innertext = 'dat'
+                // console.log(datas[i][j])
+                th.innerText = datas[i][j]
+            }
+            del = document.createElement('th')
+            tr.appendChild(del)
+            var link = document.createElement('a')
+            del.appendChild(link)
+            link.innerText = 'del'
+            link.href = 'javascript:void(0)'
+            // del feature
+            link.onclick = delFunc
+       }
+
+       function delFunc(){
+        //    var delElement = this.parentElement.parentElement
+        //    delElement.remove()
+           var delElement = this.parentNode.parentNode
+           tbody.removeChild(delElement)
+           return false
+
+       } 
+   </script>
+</body>
+</html>
