@@ -1,0 +1,3 @@
+Vim by vscodevim
+Open in Browser :use Alt + B shortcut to open current html file in default browser
+ 
