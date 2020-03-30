@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       // 每一个构造函数都有一个属性：原型/原型对象prototype
+    function Student(name,subject,score){
+        this.name = name
+        this.subject = subject
+        this.score = score
+        this.printScore = function(){
+            console.log(this.subject,this.name,this.score)
+            console.log(this.prototype)
+        }
+    }
+    
+    Student.prototype.sayHi = function(){
+        console.log('I am '+this.name)
+    }
+    var stu1 = new Student('zs','math',80)
+    stu1.printScore()
+    stu1.sayHi()
+    console.log(Student.prototype)
+    console.dir(Student.prototype)
+   </script> 
+</body>
+</html>

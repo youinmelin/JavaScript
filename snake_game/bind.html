@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 123
+        function fn(){
+                console.log(this.a)
+        }
+        fn()
+        // bind create a new method, bind的第一参数可以改变函数中this的指向
+        var o = {a:'abc'}
+        var fn1 = fn.bind(o)  //基于fn创建了一个新的函数，并将this指向o对象
+        fn1()
+    </script>
+</body>
+</html>
