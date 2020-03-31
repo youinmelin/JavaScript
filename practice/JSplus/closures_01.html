@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <ul id = 'heroes'>
+       <li>Tesla</li>
+       <li>Iron Man</li>
+       <li>Captail American</li>
+       <li>Black Widow</li>
+       <li>Eagle Eyes</li>
+   </ul> 
+   <script>
+       // 1.传统方式
+       // 给li注册事件
+    //    var heroes = document.querySelector('#heroes')
+    //    var list = heroes.children
+    //    for (i in list){
+    //         var li = list[i]
+    //         li.index = i
+    //         li.onclick = function( )  {
+    //         // 点击li时，输出当前li对应的索引
+    //         console.log(this.index)
+    //         }
+    //    }
+  
+    // 2. closure
+       //  给li注册事件
+       var heroes = document.querySelector('#heroes')
+       var list = heroes.children
+       for (i in list){
+            var li = list[i]
+            ;(function (i){
+                li.onclick = function( )  {
+                // 点击li时，输出当前li对应的索引
+                console.log(i)
+                }
+            })(i)
+       }
+
+
+       
+   </script>
+</body>
+</html>

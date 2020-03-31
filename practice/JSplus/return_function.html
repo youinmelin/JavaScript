@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getSum(m){
+            return function sum(n){
+                return (m + n)
+            }
+        }
+        var fn100 = getSum(100)
+        var fn10 = getSum(10)
+        console.log(fn100(100))
+        console.log(fn10(1))
+
+    </script>
+</body>
+</html>
