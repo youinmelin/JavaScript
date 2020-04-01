@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <div id="box2">
+        <img src="images/QRcode.jpg" alt="" width ='500' heithg='550'>
+    </div>
+    <script>
+        var clientInfo = navigator
+        console.dir(clientInfo)
+        var box = document.querySelector('#box')
+        box.innerHTML = clientInfo.language + '<br>' + clientInfo.oscpu + '<br>' +  clientInfo.userAgent
+        box.innerHTML = '你好，我是沙河税务所郑林，请用微信扫描二维码，进入个税汇算非接触式服务群，进群后修改个人名称为企业名称，谢谢！'
+        var im = document.querySelector('img')
+        console.log(im.style)
+    </script>
+</body>
+</html>
