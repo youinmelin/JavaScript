@@ -9,7 +9,7 @@
     <div id="box">
     </div>
     <div id="box2">
-        <img src="images/QRcode.jpg" alt="" width ='500' heithg='550'>
+        <img src="images/QRcode.jpg" alt="" width ='300' heithg='350'>
     </div>
     <script>
         var clientInfo = navigator
@@ -18,7 +18,12 @@
         box.innerHTML = clientInfo.language + '<br>' + clientInfo.oscpu + '<br>' +  clientInfo.userAgent
         box.innerHTML = '你好，我是沙河税务所郑林，请用微信扫描二维码，进入个税汇算非接触式服务群，进群后修改个人名称为企业名称，谢谢！'
         var im = document.querySelector('img')
-        console.log(im.style)
+        im.onmouseover = changeFont 
+        im.onclick = changeFont 
+        function changeFont(e){
+            console.log(box.style)
+            box.style.backgroundColor = 'lightgreen'
+        }
     </script>
 </body>
 </html>
