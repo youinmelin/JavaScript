@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // group by
+        var str ='email@google.com'
+        reg = /(\w+)@(\w+)\.(\w+)/
+        ret = reg.test(str)
+        console.log(RegExp.$1)
+
+        // replace all the ','and '，' to '.'
+        var str1 = 'abc,efg,123，abc,123,a'
+        ret = str1.replace(/[,，]/g,'.')
+        console.log(ret)
+    </script>
+</body>
+</html>

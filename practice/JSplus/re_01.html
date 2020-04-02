@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        pattern = 'ab[a-z]'
+        var re =new RegExp(pattern)
+        var str = 'abd'
+        console.log(re.test(str))
+
+        var re2 = /ab[a-z]/
+        console.log(re2.test(str))
+    </script>
+</body>
+</html>

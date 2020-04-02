@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   QQ： <input type="text" id = 'txtQQ'><span></span><br>
+   邮箱： <input type="text" id = 'txtEmail'><span></span><br>
+   phone： <input type="text" id = 'txtPhone'><span></span><br>
+   birthday： <input type="text" id = 'txtBirthday'><span></span><br>
+   name： <input type="text" id = 'txtName'><span></span><br>
+    <script>
+        var txtQQ = document.querySelector('#txtQQ') 
+        var txtEmail= document.querySelector('#txtEmail') 
+        var txtPhone = document.querySelector('#txtPhone')
+        // onchange: 文本改变而且文本框失去焦点
+        txtQQ.onchange = function(){
+            console.log(this.value)
+        }
+        txtEmail.onkeyup = function(){
+            console.log(this.value)
+            var strEmail = this.value
+            var re = /\w+@\w+(\.\w+)+/
+            if (re.test(strEmail)){
+                this.nextElementSibling.innerHTML = 'right'
+            }else{
+                this.nextElementSibling.innerHTML = 'wrong'
+            }
+        }
+        // 光标离开文本框
+        txtPhone.onblur = function(){
+            var strPhone = this.value
+            var re = /^\d{11}$/
+            if (re.test(strPhone)){
+                this.nextElementSibling.innerHTML = 'right'
+            }else{
+                this.nextElementSibling.innerHTML = 'wrong'
+            }
+        }
+
+       function addCheck(elementId, reg){
+           var element = document.getElementById(elementId)
+           var span = element.nextElementSibling
+           element.onblur = function(){
+                if (reg.test(this.value)){
+                    span.innerHTML = '√'
+                    span.style.color = 'green'
+                }else{
+                    span.innerHTML = '×'
+                    span.style.color = 'red'
+                }
+           }
+       } 
+       reg_birthday = /^\d{4}[-./\ ]\d{1,2}[-./\ ]\d{1,2}$/
+       reg_name = /^[^\d ]+$/
+       addCheck('txtBirthday', reg_birthday)
+       addCheck('txtName', reg_name)
+
+
+        pattern = 'ab[a-z]'
+        var re =new RegExp(pattern)
+        var str = 'abd'
+        console.log(re.test(str))
+
+        var re2 = /ab[a-z]/
+        console.log(re2.test(str))
+    </script>
+</body>
+</html>
