@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table  border="1" id="table1">
+        <thead>
+        <td status='none'>name</td>
+        <td status='none'>age </td>
+        <td status='none'>number</td>
+        <td status='none'>score</td>
+        </thead>
+    </table>
+    <script>
+        var table1 = document.querySelector('#table1')
+        var stus = [{'name':'zl','age':29,'num':3,'score':91},{'name':'li','age':24,'num':1,'score':93},{'name':'wu','age':21,'num':5,'score':96},{'name':'qb','age':26,'num':4,'score':97} ]
+        // sort : ascend, descend, none
+        // var sortStatus = [{'name':'none'},{'age':'none'},{'num':'none'},{'score':'none'}]
+        var head = table1.querySelector('thead').querySelectorAll('td')
+	var newList= []
+        // onclick event
+        for (var item in head){
+            head[item].onclick = sortItem
+            function sortItem(e){
+                // console.log('sort by',this.innerHTML)
+                current_status = this.status
+                this.status = current_status != 'ascend'? 'ascend':'decend'
+		this.setAttribute('status',this.status)
+                // console.log(e)
+                console.log('this',this)
+		for (var item in head){
+		    // console.log('---',head[item])
+		    if (this.getAttribute('status') == 'ascend'){
+			e.target.style.backgroundColor = 'red'}
+		    else if (this.getAttribute('status') == 'descend'){
+			e.target.style.backgroundColor = 'green'}
+		    else if (this.getAttribute('status') == 'none'){
+			e.target.style.backgroundColor = ''}
+		}
+        } 
+        }
+
+	for (var i=0; i< head.length;i++){
+		console.log(head[i].getAttribute('status'))
+		console.log(head[i].innerHTML)
+	}
+
+        // show items in the table
+        for (var stu in stus){
+            var tr = document.createElement('tr')
+            table1.appendChild(tr)
+            for (var item in stus[stu]){
+                var td = document.createElement('td')
+                tr.appendChild(td)
+                td.innerHTML = stus[stu][item]
+            }
+        }
+        
+    </script>    
+</body>
+</html>
