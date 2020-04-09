@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cls{
+            width: 200px;
+            height: 100px;
+            background-color: tomato;
+        }
+        .cls2{
+            width: 200px;
+            height: 100px;
+            background-color: lightskyblue;
+        }
+    </style>
+   <script src="jquery-1.12.2.js"></script> 
+</head>
+<body>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+    <input type="button" value="click" id="btn">
+    <div id="dv" class="cls"></div>
+   <script>
+       $('#btn').click(function(){
+        //    方法一
+        //     $('#dv').html('<p>This is a p tag</p>')
+        //     $('#dv').toggleClass('cls2')
+        // 方法二:链式编程
+        $('#dv').html('<p>This is a p tag</p>').toggleClass('cls2')
+       })
+
+       $('ul>li').mouseover(function(){
+           $(this).css('backgroundColor','lightgreen').siblings('li').css('backgroundColor','')
+       }).click(function (){
+           $(this).css('fontSize','30px').siblings('li').css('fontSize','')
+
+       })
+   </script> 
+</body>
+</html>

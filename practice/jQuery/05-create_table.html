@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>名称</th>
+            <th>说明</th>
+        </tr>
+        </thead>
+        <tbody id="tbd">
+        </tbody>
+    </table>
+   <script>
+        var datas = [
+            {
+                name: "传智播客",
+                url: "http://www.itcast.cn",
+                type: "IT最强培训机构"
+            },
+            {
+                name: "黑马程序员",
+                url: "http://www.itheima.com",
+                type: "大学生IT培训机构"
+            },
+            {
+                name: "传智前端学院",
+                url: "http://web.itcast.cn",
+                type: "前端的黄埔军校"
+            }];
+        for (var i=0; i < datas.length; i++){
+                $('#tbd').append($('<tr id =tr'+i+'></tr>'))
+            for (var j in datas[i]){
+                if (j != 'url'){
+                    content = '<th><a href='+datas[i]["url"]+'>'+datas[i][j]+'</a></th>'
+                    $('#tr'+i).append($(content))
+                    // $('#tr'+i).append($('<th>'+datas[i][j]+'</th>)'))
+                }else{
+                    j++
+                }
+            }
+        }
+   </script> 
+</body>
+</html>

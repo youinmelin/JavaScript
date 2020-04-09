@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+</head>
+<body>
+    <input type="button" value="select all" id="btnAll">
+    <input type="button" value="select no" id="btnNo">
+    <input type="button" value="check" id="btnCheck">
+    <input type="checkbox" value="1" id="selAll">select all
+    <div id="dv">
+    <input type="checkbox" value="1" id="">football
+    <input type="checkbox" value="2" id="">ski
+    <input type="checkbox" value="3" id="">swim
+    <input type="checkbox" value="4" id="">basketball
+    <input type="checkbox" value="5" id="">run
+    </div>
+
+    <script>
+        $('#btnCheck').click(function(){
+            console.log($('#dv :checkbox').prop('checked'))
+            var num = $('#dv').find(':checked').length
+            $('#dv').append('<br>'+num)
+
+        })
+        $('#btnAll').click(function(){
+            $('#dv :checkbox').prop('checked',true)
+        })
+        $('#btnNo').click(function(){
+            $('#dv :checkbox').prop('checked',false)
+            console.log($('#dv :checkbox')[1])
+        })
+        $('#selAll').click(function(){
+            $('#dv :checkbox').prop('checked',true)
+        })
+        $('#dv :checkbox').click(function(){
+            var num = $('#dv').find(':checked').length
+            var sum = $('#dv').find(':checkbox').length
+            $('#dv').append('<br>'+num+'/'+sum)
+            if (sum == num){
+                $('#selAll').prop('checked','checked')
+            }
+            else{
+                $('#selAll').attr('checked',false)
+            }
+        })
+    </script>
+</body>
+</html>

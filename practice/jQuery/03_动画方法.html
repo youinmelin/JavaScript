@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: darkolivegreen;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="hide" id="btnHide">    
+    <input type="button" value="show" id="btnShow">    
+    <input type="button" value="slidein" id="slidein">
+    <input type="button" value="slideout" id="slideout">
+    <input type="button" value="change" id="change">
+    <input type="button" value="fade" id="btnFade">
+    <input type="button" value="fadeto" id="btnFadeto">
+    <div id="dv"></div>
+    <script>
+        $('#btnHide').click(function() {
+            $('#dv').hide('slow')
+        })
+        $('#btnShow').click(function() {
+            $('#dv').show('slow')
+        })
+        $('#slidein').click(function(){
+            $('#dv').slideDown()
+        })
+        $('#slideout').click(function(){
+            $('#dv').slideUp()
+        })
+        $('#change').click(function(){
+            $('#dv').slideToggle()
+        })
+        $('#btnFade').click(function() {
+            $('#dv').fadeToggle(1000)
+        })
+        $('#btnFadeto').click(function() {
+            $('#dv').fadeTo(1000,0.5)
+        })
+    </script>
+</body>
+</html>

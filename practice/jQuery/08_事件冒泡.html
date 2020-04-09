@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1{
+            width: 300px;
+            height: 250px;
+            background-color: greenyellow
+        }
+        #dv2{
+            width: 250px;
+            height: 200px;
+            background-color: rgb(64, 30, 218)
+        }
+        #dv3{
+            width: 200px;
+            height: 150px;
+            background-color: rgb(236, 11, 11)
+        }
+        ul li{
+            list-style-type: none;
+            float:left;
+            margin-left: 0px;
+            font-size: 50px;
+            color: rgb(250, 7, 7);
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            // 冒泡案例
+            $('#dv1').click(function () {
+                console.log('click: '+$(this).attr('id'))
+            })
+            $('#dv2').click(function () {
+                console.log('click: '+$(this).attr('id'))
+            })
+            $('#dv3').click(function () {
+                console.log('click: '+$(this).attr('id'))
+                return false
+            })
+            // each()方法
+            $('#ul>li').each(function(){
+                //agrument包含两个参数，1.索引；2.DOM对象
+                console.log(arguments.length)
+                $(arguments[1]).css('opacity',(arguments[0]+1)/10+0.2)
+            })
+            // 打分案例
+            $('#ul>li').on('mouseover',function () {
+                $(this).text('★').prevAll('li').text('★')
+            }).on('mouseout',function (){
+                $('#ul>li').text('☆')
+            }).on('click',function(){
+                $('#ul>li').off('mouseout').off('mouseover')
+                console.log($(this).index()+1)
+                $('#ul>span').text($(this).index()+1+'颗星')
+            })
+        })
+    </script>
+</head>
+<body>
+   <div id="dv1">
+        <div id="dv2">
+            <div id="dv3">
+            </div>
+        </div>
+   </div> 
+   <ul id="ul">
+       <li>☆</li>
+       <li>☆</li>
+       <li>☆</li>
+       <li>☆</li>
+       <li>☆</li>
+       <span></span>
+   </ul>
+</body>
+</html>

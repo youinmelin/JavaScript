@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <style>
+        div{
+            width: 300px;
+            height: 50px;
+            background-color: yellow
+
+        }
+    </style>
+    <script>
+
+    // $(function(){
+    //     $('#btn').click(function(){
+    //         $('#div').css({'width':'300px','height':'200px','backgroundColor':'red'})
+    //     })
+    // })
+    </script>
+</head>
+<body>
+    <input type="button" value="click" id="btn">
+    <input type="file" name="" id="filename">
+    <div id="div"></div>
+    <p>abc</p>
+    <p>123</p>
+    <p>work</p>
+    <p>study</p>
+    <p class="cls"></p>
+    <p class="cls"></p>
+    <ul id="alphabet">
+        <li>abc</li>
+        <li>def</li>
+        <li>hij</li>
+        <li>klm</li>
+        <li>nop</li>
+    </ul>
+    <script>
+        $('#btn').click(function(){
+            $('#div').css({'width':'300px','height':'50px','backgroundColor':'green'})
+            $('#div').text($('#filename').val())
+            $('p.cls').text('appear')
+        })
+        $('p').click(function(){
+            // $('p').text('chaned')
+            $(this).css({'backgroundColor':'lightgreen'})
+            console.log($(this).text())
+        })
+        $('#alphabet>li:even').mouseover(function(){
+            $(this).css({'backgroundColor':'lightgreen'})
+        })
+        $('#alphabet>li:even').mouseout(function(){
+            $(this).css({'backgroundColor':''})
+        })
+        $('#alphabet>li:odd').mouseover(function(){
+            $(this).css({'backgroundColor':'lightblue'})
+        })
+        $('#alphabet>li:odd').mouseout(function(){
+            $(this).css({'backgroundColor':''})
+        })
+
+    </script>
+</body>
+</html>

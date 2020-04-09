@@ -19,6 +19,16 @@
         var_dump($arry);
         echo '<br>';
         var_dump($str);
+        echo '<br>';
+	foreach($arry as $item){
+		echo $item.'<br>';
+	}
+	for ($i=0;$i<count($arry);$i++){
+		echo $i.': '.$arry[$i].', ';} 
+        echo '<br>';
+	$arry_key = array('type'=>'apple','color'=>'red','price'=>'10','place'=>'changping');
+	foreach($arry_key as $key=>$value){
+		echo $key.'==>>'.$value.'<br>';}
     ?>
 </body>
 </html>

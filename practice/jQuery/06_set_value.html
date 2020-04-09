@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+</head>
+<body>
+   <input type="button" value="显示效果" id="btn"> 
+   <input type="text" value="文本框" id="txt">
+   <input type="radio" value="man" name="sex" id="rad">male
+   <input type="checkbox" value="1" id="ck">eating
+   <input type="submit" value="submit" id="sm">
+   <textarea name="" id="ta" cols="30" rows="10">haha</textarea>
+   <select name="pull" id="se">
+       <option value="1">bj</option>
+       <option value="2">sh</option>
+       <option value="3">tj</option>
+       <option value="4">wh</option>
+       <option value="5">cs</option>
+   </select>
+   <input type="checkbox" name="" id="cb" value="1">打豆豆
+   <input type="checkbox" name="" id="cb" value="2">吃饭
+   <script>
+       $('#btn').click(function(){
+           console.log($(this).val())
+           console.log($('#txt').val())
+           console.log($('#rad').val())
+           console.log($('#ck').val())
+           console.log($('#cb').val())
+           console.log($('#cb').attr('checked'))
+           $('#sm').val('提交')
+            $('#ta').val($('#se').val())
+       })
+   </script>
+</body>
+</html>
