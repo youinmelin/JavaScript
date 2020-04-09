@@ -21,8 +21,7 @@ let fileContent = `<!DOCTYPE html>
 let initData={
 	projectName: 'mydemo',
 	data:[{
-		name: 'img',
-		type: 'dir'
+		name: 'img', type: 'dir'
 	},{
 		name: 'css',
 		type: 'dir'

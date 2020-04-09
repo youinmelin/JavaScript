@@ -10,25 +10,25 @@
     </div>
     <div id="box2" width = '100'>
         <h2>
-        你好，我是沙河税务所郑林，请用微信扫描二维码，进入个税汇算非接触式服务群，进群后修改个人名称为企业名称，谢谢！<br>
+        你好，请用微信扫描二维码，进入个税汇算非接触式服务群，进群后修改个人名称为企业名称，谢谢！<br>
         </h2>
         <img src="images/QRcode.jpg" alt="" width ='300' heithg='350'>
     </div>
+    <script src="jquery-1.12.2.js"></script>
     <script>
-        var clientInfo = navigator
-        console.dir(clientInfo)
-        var box = document.querySelector('#box')
-        box.innerHTML =  clientInfo.oscpu + '<br>' +  clientInfo.userAgent
+        //box.innerHTML =  clientInfo.oscpu + '<br>' +  clientInfo.userAgent
+	    var clientInfo = navigator
+        content = clientInfo.userAgent
         // box.innerHTML = '你好，我是沙河税务所郑林，请用微信扫描二维码，进入个税汇算非接触式服务群，进群后修改个人名称为企业名称，谢谢！'
-        var im = document.querySelector('img')
-        im.onmouseover = changeFont 
-        im.onclick = changeFont 
-        function changeFont(e){
-            console.log(box.style)
-            box.style.backgroundColor = ''
-            box.innerHTML = ''
 
-        }
+$('#box2>img').mouseover(function(e){
+		console.log(e)
+	    $('#box').text(content)
+	})
+$('#box2>img').click(function(e){
+	    $('#box').text('')
+	})
+
     </script>
 </body>
 </html>
