@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no;">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -43,9 +43,16 @@
         echo '</div>';
         echo '<br>';
         echo '<div>';
-        echo '--------------get files list-----------';
+        echo '<br>--------------get files list-----------<br>';
         $files = scandir('./');
         print_r ($files);
+        echo '</div>';
+        echo '<br>--------------get forecast-----------<br>';
+        echo '<div>';
+	$content = file_get_contents('http://t.weather.sojson.com/api/weather/city/101010100');
+	$con_json = json_decode($content);
+	$a = $con_json->{'data'}->{'forecast'}[0];
+	var_dump ($a);
         echo '</div>';
     ?>
 

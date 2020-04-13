@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no;">
-    <title>YOUINME</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
     <style>
         #box2{
@@ -59,14 +59,12 @@ $conn->close();
     <div id="box2" >
         通过输入时间长度和文本，计算每分钟的单词数量<a href='count_words.html'>click</a><br>
     </div>
-
     <div style="background:lightgreen" id="box3" >
-        <form action="message.php" method='post' >
-            请输入昵称:<input type="text" name="uname" id ="uname"><br>
-            请输入留言:<textarea name="message" id="message" cols="30" rows="2"></textarea>
-            <input type="submit" value="OK"  id="message_btn">
+        <form action="sign_up.php" method='post' >
+            请注册一个昵称吧<input type="text" name="uname" id ="uname">
+            <input type="submit" value="OK"  id="sign_btn">
 </form> 
-            <span id='span'><font color = "red"></font></span>
+            <span id='span_hit'><font color = "red"></font></span>
     </div>
     <div id="box4"> 
         <?php
@@ -86,15 +84,35 @@ $conn->close();
     </div> -->
     <script>
         var clientInfo = navigator
-        // console.dir(clientInfo)
+        console.dir(clientInfo)
+        var box = document.querySelector('#box')
+        // box.innerHTML =  clientInfo.oscpu + '<br>' +  clientInfo.userAgent
+        // box.innerHTML = '你好，我是沙河税务所郑林，请用微信扫描二维码，进入个税汇算非接触式服务群，进群后修改个人名称为企业名称，谢谢！'
         $('div').click(function(){
             $(this).animate({'opacity':1,'fontSize':'30px'},'normal')
-            $(this).siblings('div').animate({'opacity':0.8,'fontSize':'20px'})
+            console.log($(this))
         })
-       // $('div').mouseout(function(){
-        //     $(this).animate({'opacity':0.8,'fontSize':'20px'})
-        // })
+        $('div').mouseout(function(){
+            $(this).animate({'opacity':0.8,'fontSize':'20px'})
+        })
 
+        $('#sign_btn').click(function(){
+            var username = $('#uname').val()
+            if (!username){
+                $('#uname').css('backgroundColor','red')
+                $('#span_hit').text ('为什么不输入名字呢')
+                return false
+            }else{
+                for(var name in user_arr){
+                    if (username == user_arr[name]){
+                        // var str = ' This name is existed, please change a name.'
+                        var str = '名字重复，请重新输入' 
+                        $('#span_hit').text(str)
+                        return false
+		    }
+                }
+            }
+        })
 
         // $('div').mouseenter(function(){
         //     $(this).css('opacity',1).css('fontSize','30px')
