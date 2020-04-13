@@ -117,6 +117,7 @@ $conn->close();
     ?>
     <div id="box">
         <span><?php 
+	// Save visitors infomation in log.txt
 	   $f = fopen('count.txt','a+');
 	   $count = fread($f,filesize('count.txt'));
 	   $count = $count + 1;
@@ -126,7 +127,7 @@ $conn->close();
 	   fclose($f);
 
 	   $f = fopen('log.txt','a+');
-	   $log_content = "$count \t $current_ip \t $client[1]$client[2]$client[3]$client[4] \t $date \t $time\n";
+	   $log_content = "$count \t $current_ip \t $client[2]$client[3]$client[4]$client[5] \t $date \t $time\n";
 	   fwrite($f,$log_content);
 	   fclose($f);
 
