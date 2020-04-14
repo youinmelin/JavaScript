@@ -47,8 +47,13 @@ $conn->close();
 	if (strlen($content)>1000){
 		echo '<div id="forecast">';
 		$con_json = json_decode($content);
-		$w = $con_json->{'data'}->{'forecast'}[0];
-		$weather =  '今天天气：'.$w->{'type'}.$w->{'high'}.$w->{'low'}.'风力'.$w->{'fl'}.'<br>'.$w->{'notice'};
+		if (date('H') + 0 < 18){
+			$w = $con_json->{'data'}->{'forecast'}[0];
+			$weather =  '今天天气：'.$w->{'type'}.$w->{'high'}.$w->{'low'}.'风力'.$w->{'fl'}.'<br>'.$w->{'notice'};
+		}else{
+			$w = $con_json->{'data'}->{'forecast'}[1];
+			$weather =  '明天天气：'.$w->{'type'}.$w->{'high'}.$w->{'low'}.'风力'.$w->{'fl'}.'<br>'.$w->{'notice'};
+		}
 		echo $weather;
 		echo '</div>';
 	}
