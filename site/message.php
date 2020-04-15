@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+    $expire = time()+60*60*24*7;  // cookie's expire time is 7 days
+    if ($_POST){
+            setcookie('user', $_POST['uname'],$expire);
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

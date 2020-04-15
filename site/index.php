@@ -57,6 +57,7 @@ $conn->close();
 		echo $weather;
 		echo '</div>';
 	}
+
 ?>
     <div id="box">
         查看终端的基本信息<a href='device_info.php'>click</a>
@@ -67,7 +68,14 @@ $conn->close();
 
     <div style="background:lightgreen" id="box3" >
         <form action="message.php" method='post' >
-            请输入昵称:<input type="text" name="uname" id ="uname"><br>
+<?php
+    // get username for cookie
+    $user = '';
+    if (isset($_COOKIE['user'])){
+            $user = $_COOKIE['user'];
+    }
+?>
+        请输入昵称:<input type="text" name="uname" id ="uname" value = '<?php echo $user; ?>' ><br>
             请输入留言:<textarea name="message" id="message" cols="30" rows="2"></textarea>
             <input type="submit" value="OK"  id="message_btn">
 </form> 
