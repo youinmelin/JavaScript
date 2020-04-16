@@ -42,6 +42,9 @@ $conn->close();
     <script src="jquery-1.12.2.min.js"></script>
 </head>
 <body>
+    <div id="box">
+    欢迎使用文件传输系统
+    </div>
 <?php
 	$content = file_get_contents('http://t.weather.sojson.com/api/weather/city/101010100');
 	if (strlen($content)>1000){
@@ -59,9 +62,6 @@ $conn->close();
 	}
 
 ?>
-    <div id="box">
-        查看终端的基本信息<a href='device_info.php'>click</a>
-    </div>
     <div id="box2" >
         通过输入时间长度和文本，计算每分钟的单词数量<a href='count_words.html'>click</a><br>
     </div>
