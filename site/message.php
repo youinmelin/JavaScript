@@ -77,13 +77,20 @@ if ($_POST){
 <div id = 'dv'>
 	看看大家伙都说啥了
 	<a href="">刷新</a>
+	<a href="index.php">首页</a>
 	<table>
 	<thead>
-	<th>昵称 </th> <th width = '70%'>留言</th> <th>时间</th>
+	<th>  <a href="message.php?by=uname&order=desc">昵</a><a href="message.php?by=uname&order=asc">称</a>  </th> <th width = '70%'>留言</th> <th ><a href="message.php?by=date&order=desc">时</a><a href="message.php?by=date&order=asc">间</a> </th
 	</thead>
 	<tbody>
 	<?php
-	$sql = "select uname,message,date,time from message;";
+	if ($_GET){
+		$by = $_GET['by'];
+		$order = $_GET['order'];
+		$sql = "select uname,message,date,time from message order by $by $order;";
+	}else{
+		$sql = "select uname,message,date,time from message order by date desc;";
+	}
 	$ret = $conn->query($sql);	
 	if ($ret -> num_rows > 0){
 		while ( $row = $ret -> fetch_assoc()){
