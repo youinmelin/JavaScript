@@ -81,6 +81,9 @@ $conn->close();
 </form> 
             <span id='span'><font color = "red"></font></span>
     </div>
+<div>
+    查询终端信息<a href='device_info.php'>click</a><br>
+</div>
     <div id="box4"> 
         <?php
             $user_str = '';
