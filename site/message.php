@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    $expire = time()+60*60*24*7;  // cookie's expire time is 7 days
+    $expire = time()+60*60*24*700;  // cookie's expire time is 700 days
     if ($_POST){
             setcookie('user', $_POST['uname'],$expire);
     }
@@ -9,18 +9,34 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOUINME</title>
-    <script src="jquery-1.12.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
+	<title>YOUINME</title>
+	<link rel="stylesheet" href="css/main.css">
+    <!-- <script src="js/jquery-1.12.2.min.js"></script> -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/bootstrap.min.js"></script>
+	<!-- <script src="js/bootstrap.min.js"></script> -->
+	<style>
+	body{
+            text-align: center;
+            font-size: 15px;
+		}
+	</style>	
+
 </head>
 <body>
 <?php
-// database
-$servername = 'localhost';
-$username = 'youinme';
-$password = '123456';
+// --------------------
+include 'database_enter.php';
+$password = "LMa4c7^_DL}fzex3";
+// // read database parameter from file: database.json
+// $database_param = file_get_contents('json/database.json');
+// // JSON --> array
+// $database_array = json_decode($database_param, true);
+// $servername = $database_array["servername"];
+// $username = $database_array["username"];
+// $password = $database_array["password"];
+// $database_name = $database_array["database_name"];
+// --------------------
 // build connection
 $conn = new mysqli($servername, $username, $password);
 mysqli_set_charset($conn,'utf8');
@@ -28,11 +44,15 @@ mysqli_set_charset($conn,'utf8');
 if ($conn->connect_error){
 	die('failed:'.$conn->connect_error);
 }
-$conn->query('use youinme;');
+$use_query = "use ".$database_name.";";
+$conn->query($use_query);
 if ($_POST){
 	$uname = $_POST['uname'] ;
 	if (!$uname){$uname = 'XXX';}
 	$message = $_POST['message'];
+	$message = str_replace("=", "＝", $message);
+	$message = str_replace("#", "＃", $message);
+
 	if (!$message){
 		echo ("<div>什么也没说呀</div>");
 	}else{
@@ -67,12 +87,16 @@ if ($_POST){
 			$order = $_GET['order'];
 			$sql = "select uname,message,date,time from message order by $by $order;";
 		}else{
-			$sql = "select uname,message,date,time from message order by date desc;";
+			$sql = "select uname,message,date,time from message order by mid desc;";
 		}
 		$ret = $conn->query($sql);	
 		if ($ret -> num_rows > 0){
 			while ( $row = $ret -> fetch_assoc()){
-				echo '<tr><th>'.$row['uname'].'</th><th width="60%">'.$row['message'].'</th><th>'.$row['date'].'</th></tr>';
+				echo '<tr>
+				<th>'.$row['uname'].'</th>
+				<th width="60%">'.$row['message'].'</th>
+				<th nowrap="nowrap">'.$row['date'].'</th>
+				</tr>';
 			}
 		}
 		$conn->close();

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>反地址解析</title>
+<style type="text/css">
+ #map{position:absolute;width:400px; height:300px;}
+</style>
+<script type="text/javascript" src="//api.map.sogou.com/maps/js/api_v2.5.1.js"></script>
+</head>
+ 
+<body>
+    <div id="map" style="float:left"></div>
+    <div id="result" style="margin-left:400px;font-size:12px;width:550px;">
+ 
+    </div>
+</body>
+<script>
+/**
+*反地址解析
+*/
+var myLatLng = new sogou.maps.Point(12949482.781246997,4837105.69140625);
+var myOptions = {
+  zoom: 17,
+  center: myLatLng
+};
+var map = new sogou.maps.Map(document.getElementById("map"), myOptions);
+ 
+function callback(a){
+     if(a.status=='ok'){
+         var geometry=a.data[0];
+         new sogou.maps.Marker({
+             map:map,
+             title:geometry.address,
+             position:geometry.location,
+             label:{visible:true}
+         });
+     }
+ 
+};
+var request={
+    location:{
+          points:[new sogou.maps.Point(12949482.781246997,4837105.69140625),new sogou.maps.Point(12948892.218746996,4835609.52734375)],
+          type:0
+    }
+}
+var geo=new sogou.maps.Geocoder();
+geo.geocode(request,callback);
+</script>
+</html>
+            

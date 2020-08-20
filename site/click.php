@@ -11,15 +11,21 @@
           document.execCommand("Copy"); // 执行浏览器复制命令
           alert("复制成功！");
           }
-    </script>		<script type="text/javascript">    //判断时间是否为个位数，如果时间为个位数就在时间之前补上一个“0”	function check(val) {		if (val < 10) {			return ("0" + val);		} 		else {			return (val);		}	}	function displayTime() {		//获取div元素		var timeDiv=document.getElementById("timeDiv");		//获取系统当前的年、月、日、小时、分钟、秒		var date = new Date();		var year = date.getFullYear();		var month = date.getMonth() + 1;		var day = date.getDate();		var hour = date.getHours();		var minutes = date.getMinutes();		var second = date.getSeconds();		var timestr = year + "年" + month + "月" + day + "日  " + check(hour)				+ ":" + check(minutes) + ":" + check(second);		//将系统时间设置到div元素中		timeDiv.innerHTML = timestr;	}	//每隔1秒调用一次displayTime函数	function start(){        window.setInterval("displayTime()",1000)//单位是毫秒}</script>
-</head><!--  body onload:当整个html页面加载完成后执行此函数  -->
-<body  onload="start();">
-   <h1>topic</h1>    <div id="timeDiv"></div>  <!-- 显示时间  -->
+    </script>
+</head>'
+<body>
+   <h1>topic</h1> 
    <input type="button" id="btn" value="show">
    <input type="button" id="btn2" value="show2">
-   <textarea id="copy">https://blog.csdn.net/yuzsmc</textarea>
-    <input type="button" onclick="copy();" value="点击复制"></input>
-    <input type='button' onclick='copy();' value='点击复制'></input>
+   <!-- <textarea id='copy'>https://blog.csdn.net/yuzsmc</textarea> -->
+   <!-- <input type="text" value="wechat111" id="copy" style="opacity: 0" readonly> -->
+   <input type="text" value="wechat111" id="copy" readonly>
+
+   <input type='button' onclick='copy();' value='点击复制'></input><br>
+
+
+
+
    <div id="box">
 
    </div>
@@ -65,5 +71,67 @@
 
        }
    </script>
+
+<?php
+//将内容进行UNICODE编码，编码后的内容格式：\u56fe\u7247 （原始：图片）
+function unicode_encode($name)
+{
+    $name = iconv('UTF-8', 'UCS-2', $name);
+    $len = strlen($name);
+    $str = '';
+    for ($i = 0; $i < $len - 1; $i = $i + 2)
+    {
+        $c = $name[$i];
+        $c2 = $name[$i + 1];
+        if (ord($c) > 0)
+        {    // 两个字节的文字
+            $str .= '\u'.base_convert(ord($c), 10, 16).base_convert(ord($c2), 10, 16);
+        }
+        else
+        {
+            $str .= $c2;
+        }
+    }
+    return $str;
+}
+ 
+// 将UNICODE编码后的内容进行解码，编码后的内容格式：\u56fe\u7247 （原始：图片）
+function unicode_decode($name)
+{
+    // 转换编码，将Unicode编码转换成可以浏览的utf-8编码
+    $pattern = '/([\w]+)|(\\\u([\w]{4}))/i';
+    preg_match_all($pattern, $name, $matches);
+    if (!empty($matches))
+    {
+        $name = '';
+        for ($j = 0; $j < count($matches[0]); $j++)
+        {
+            $str = $matches[0][$j];
+            if (strpos($str, '\\u') === 0)
+            {
+                $code = base_convert(substr($str, 2, 2), 16, 10);
+                $code2 = base_convert(substr($str, 4), 16, 10);
+                $c = chr($code).chr($code2);
+                $c = iconv('UCS-2', 'UTF-8', $c);
+                $name .= $c;
+            }
+            else
+            {
+                $name .= $str;
+            }
+        }
+    }
+    return $name;
+}
+ 
+//测试用例：
+ 
+//编码
+$name = '图片';
+echo '<h3>'.unicode_encode($name).'</h3>';
+ 
+//解码
+echo '<h3>'.unicode_decode('\u56fe').'</h3>';
+?>
 </body>
 </html>

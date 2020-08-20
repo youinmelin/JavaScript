@@ -17,10 +17,17 @@
         }
     </style>
     <?php
-$user_arr = array();
-$servername = 'localhost';
-$username = 'youinme';
-$password = '123456';
+ // --------------------
+// read database parameter from file: database.json
+$database_param = file_get_contents('json/database.json');
+// JSON --> array
+$database_array = json_decode($database_param, true);
+$servername = $database_array["servername"];
+$username = $database_array["username"];
+$password = $database_array["password"];
+$database_name = $database_array["database_name"];
+$use_query = "use ".$database_name.";";
+// --------------------
 // build connection
 $conn = new mysqli($servername, $username, $password);
 mysqli_set_charset($conn,'utf8');
@@ -28,7 +35,7 @@ mysqli_set_charset($conn,'utf8');
 if ($conn->connect_error){
 	die('failed:'.$conn->connect_error);
 }
-$sql = 'use youinme;';
+$sql = 'use test;';
 $conn->query($sql);
 $sql = 'select uname from user;';
 $ret = $conn->query($sql);
@@ -43,7 +50,8 @@ $conn->close();
 </head>
 <body>
 <?php
-	$content = file_get_contents('http://t.weather.sojson.com/api/weather/city/101010100');
+    $content = file_get_contents('http://t.weather.sojson.com/api/weather/city/101010100');
+    echo $content;
 	if (strlen($content)>1000){
 		echo '<div id="forecast">';
 		$con_json = json_decode($content);
