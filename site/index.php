@@ -31,7 +31,6 @@
 // $database_array = json_decode($database_param, true);
 // $servername = $database_array["servername"];
 // $username = $database_array["username"];
-$password = "LMa4c7^_DL}fzex3";
 // $database_name = $database_array["database_name"];
 // $use_query = "use ".$database_name.";";
 // --------------------

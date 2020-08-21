@@ -21,7 +21,6 @@
 <?php
 // --------------------
 include 'database_enter.php';
-$password = "LMa4c7^_DL}fzex3";
 // --------------------
 // build connection
 $conn = new mysqli($servername, $username, $password);

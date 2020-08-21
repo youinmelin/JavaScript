@@ -27,7 +27,6 @@
 <?php
 // --------------------
 include 'database_enter.php';
-$password = "LMa4c7^_DL}fzex3";
 // // read database parameter from file: database.json
 // $database_param = file_get_contents('json/database.json');
 // // JSON --> array
