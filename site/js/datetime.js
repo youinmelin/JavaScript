@@ -21,6 +21,7 @@
 		var second = date.getSeconds();
 		var timestr = year + "年" + month + "月" + day + "日  " + check(hour)
 				+ ":" + check(minutes) + ":" + check(second);
+		var timestr = check(hour) + ":" + check(minutes) + ":" + check(second);
 		//将系统时间设置到div元素中
 		timeDiv.innerHTML = timestr;
 	}
