@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        function fun() {
+            // user $.ajax() 发送异步请求
+            $.ajax({
+                url:"http://localhost:8080/users", // request path
+                type:"GET", // request type
+                // data:{"username":"lin","age":20},
+                success:function (params) {
+                    alert(params);
+                }, // 响应成功后执行的回调函数
+                error:function () {
+                    alert("error")
+                }, // 响应出现错误，执行的回调函数
+
+                dataType:"json"  // 预期服务器返回的数据类型。
+            });
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="发送异步请求" onclick="fun();"><input>
+
+
+</body>
+</html>

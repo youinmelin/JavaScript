@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        function fun() {
+            // use $.get() 发送异步请求
+            $.get("http://localhost:8080/users", 
+            {},
+            function (params) {
+                alert("params")
+            },
+            "json");
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="发送异步请求" onclick="fun();"><input>
+
+
+</body>
+</html>
