@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+    // 页面加载完成后
+    $(function () {
+        //给userid绑定bluu（失去焦点）事件
+        $("#userid").blur(function () {
+            // 获取uersid框输入的值
+            var userid_str = $(this).val()
+            //发送ajax请求
+            $.get("http://localhost:8080/userid", 
+            {'id':1},  // 通过get方式发送给后端的数据http://localhost:8080/userid?id=1
+            function (data) {
+                var span = $("#userid_span")
+                span.css("color","red")
+                span.html(data.username)
+                },
+                "json");
+            });
+        });
+</script>
+<body>
+   <from>
+       <input type="text" id="userid" name="id" placeholder="input userid">
+       <span id="userid_span"></span>
+       <br>
+       <input type="password" name="password" placeholder="input password"><br>
+       <input type="submit" value="sign up">
+   </from> 
+</body>
+</html>

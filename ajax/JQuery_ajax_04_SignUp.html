@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+    // 页面加载完成后
+    $(function () {
+        //给username绑定bluu（失去焦点）事件
+        $("username").blur(function () {
+            // 获取uersname框输入的值
+            var username_str = $(this).val()
+            //发送ajax请求
+            // 期望服务器响应回json数据：{"userExsit":true, "msg":"用户名已存在"}, 
+            // {"userExsit":false, "msg":"用户名可用"}
+            $.get("http://localhost:8080/userid", 
+            {username:username_str},
+            function (data) {
+                // 判断userExsit键的值是否true
+                var span = $("#username_span")
+                if(data.userExist){
+                    span.css("color","red")
+                    span.html(data.msg)
+                }else{
+                    span.css("color","green")
+                    span.html(data.msg)
+                }
+                
+            })
+            
+        })
+        
+    })
+</script>
+<body>
+   <from>
+       <input type="text" id="username" name="username" placeholder="input username">
+       <span id="username_span"></span>
+       <br>
+       <input type="password" name="password" placeholder="input password"><br>
+       <input type="submit" value="sign up">
+   </from> 
+</body>
+</html>

@@ -6,11 +6,13 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script>
         function fun() {
+            $("#text").val("input")
             // use $.get() 发送异步请求
-            $.get("http://localhost:8080/users", 
-            {},
+            $.get("http://localhost:8080/userid", 
+            {'id':1},
             function (params) {
-                alert("params")
+                var span = $("#user_input")
+                span.html(params.username)
             },
             "json");
         }
@@ -18,7 +20,11 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="button" value="发送异步请求" onclick="fun();"><input>
+    <input type="button" id="id" name="id" value="发送异步请求" onclick="fun();">
+    <input type="text" id="text" value="hello">
+    <span id="user_input" ></span>
+	<script>
+	</script>
 
 
 </body>
