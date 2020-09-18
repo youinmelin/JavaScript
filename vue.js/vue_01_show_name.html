@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js test</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <!-- show a name 插值表达式-->
+<div id="app">
+    <!-- view in MVVM -->
+    {{name}}  
+
+</div>
+</body>
+<script>
+    // Model and VM(View and Model)in MVVM
+    var VM = new Vue({
+        el:'#app',  // vm 接管了app区域
+        data:{ // model数据
+            name:'youinme'
+        }
+    });
+
+</script>
+</html>
