@@ -17,7 +17,7 @@
         <input type="text" v-model="num2"/> = 
         {{Number.parseInt(num1) + Number.parseInt(num2)}}
             <br>
-        <!-- v-text 能够解决插值表达式加载时闪烁的问题 -->
+        <!-- v-text 能够解决插值表达式闪烁的问题 -->
            <h4>v-text:</h4> 
         <span v-text="name"></span>
         <input type="text" v-model="num1"/> +
@@ -39,32 +39,33 @@
         <input type="text" v-model="size">
         <span :style="{ fontSize: size + 'px' }">v-bind绑定到style属性</span>  
 
-    </div>
+    <!-- </div> -->
 </body>
-    <script src="vue.min.js"></script>
+    <script src="build.js"></script>
+    <!-- <script src="vue.min.js"></script> -->
 <script>
-    var VM = new Vue({
-        el:'#app',
-        data:{
-            name:'youinme',
-            num1:0,
-            num2:0,
-            result:0,
-            url_youinme:'https://www.youinme.top/path.php',
-            size:20
-        },
-        methods: {
-            change: function(){
-                // 使用成员变量前要加this
-                this.result = Number.parseInt(this.num1) + Number.parseInt(this.num2)
-                // alert("计算结果：" + this.result)
-            },
-            set_zero: function(){
-                this.result = 0;
-                this.num1 = 0;
-                this.num2 = 0;
-            }
-        }
-    })
+    // var VM = new Vue({
+    //     el:'#app',
+    //     data:{
+    //         name:'youinme',
+    //         num1:0,
+    //         num2:0,
+    //         result:0,
+    //         url_youinme:'https://www.youinme.top/path.php',
+    //         size:20
+    //     },
+    //     methods: {
+    //         change: function(){
+    //             // 使用成员变量前要加this
+    //             this.result = Number.parseInt(this.num1) + Number.parseInt(this.num2)
+    //             // alert("计算结果：" + this.result)
+    //         },
+    //         set_zero: function(){
+    //             this.result = 0;
+    //             this.num1 = 0;
+    //             this.num2 = 0;
+    //         }
+    //     }
+    // })
 </script>
 </html>

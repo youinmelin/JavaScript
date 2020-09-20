@@ -8,6 +8,31 @@
 </head>
 <body>
     <div id="app">
+        <span v-text="name"></span>
+        <ul>
+            <!-- 遍历数组 key="主键" -->
+            遍历数组
+            item:index
+            <li v-for="(item, index) in list12345":key="index" v-if="index % 2 == 0">
+                <span v-text="item"></span>:
+                <span v-text="index"></span>
+            </li>
+            item:
+            <span v-for="(item) in list12345" >
+                <span v-text="item"></span>
+            </span><br>
+            遍历对象：
+            <li v-for="(value,key) in user">
+                {{key}}:{{value}}
+            </li>
+            遍历数组中的对象：
+            <li v-for="(item,index) in userlist":key="item.user.uname" >
+                <div v-if="item.user.age > 18" style="background:lightblue">
+                {{index}}:{{item.user.uname}},{{item.user.age}}</div>
+                <div v-else="">
+                {{index}}:{{item.user.uname}},{{item.user.age}}</div>
+            </li>
+        </ul>
 
 
     </div>
@@ -16,6 +41,16 @@
 <script>
     var VM = new Vue({
         el:'#app',
+        data:{
+            name:"youinme",
+            list12345:[1,2,3,4,5],
+            user:{uname:'lin',age:10},
+            userlist:[
+                {user:{uname:'youinme',age:20}},
+                {user:{uname:'lin',age:30}},
+                {user:{uname:'Nasa',age:9}}
+            ]
+        }
         
     })
     

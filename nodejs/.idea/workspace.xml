@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4d59197c-0fa0-489b-afd2-fb3a45df289a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/01.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/02.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/03.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/demo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/html.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/practice_01.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/practice_01_class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/practice_01_class_01.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/practice_02_file_operate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydemo/practice_03_path.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/.postcssrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/build/check-versions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/build/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/build/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/build/vue-loader.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/build/webpack.base.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/build/webpack.dev.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/build/webpack.prod.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/config/dev.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/config/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/config/prod.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/.gitrepo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/assets/1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/assets/2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/assets/KFOlCnqEu92Fr1MmEU9fBBc4.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/assets/baby.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/assets/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/assets/material.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/components/MyComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/components/cascader/Cascader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/components/form/Editor.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/components/form/Upload.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/components/messages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/components/tree/Tree.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/components/tree/TreeItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/http.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/mockDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/Dashboard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/Layout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/item/Brand.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/item/BrandForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/item/Category.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/item/Goods.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/item/GoodsForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/item/Specification.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/trade/Promotion.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/pages/user/Statistics.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/static/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-demo/vue-cli-demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-demo/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-demo/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-demo/vue-demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_01_class.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_01_class_01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_02_file_operate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_03_path.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/jQuery/01_jQuery.html" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/jQuery/01_jQuery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/shahe.html" beforeDir="false" afterPath="$PROJECT_DIR$/../site/shahe.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="E:\knowledge\IT\my_git\JavaScript\nodejs\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:/test/apache-maven-3.5.2\repository" />
+        <option name="mavenHome" value="D:/test/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\test\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="11" />
+  </component>
+  <component name="ProjectId" id="1ej6vMSrG7LfDX9qhKmDAcTjk4g" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d59197c-0fa0-489b-afd2-fb3a45df289a" name="Default Changelist" comment="" />
+      <created>1594822884922</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594822884922</updated>
+      <workItem from="1594822886838" duration="862000" />
+      <workItem from="1594896920293" duration="3462000" />
+      <workItem from="1594904497415" duration="1176000" />
+      <workItem from="1594907150112" duration="676000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1352" y="100" key="#Project_Structure" timestamp="1594822997975">
+      <screen x="900" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1352" y="100" key="#Project_Structure/0.0.900.1600/900.0.1920.1040@900.0.1920.1040" timestamp="1594822997975" />
+    <state width="1864" height="262" key="GridCell.Tab.0.bottom" timestamp="1594906988005">
+      <screen x="900" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1864" height="262" key="GridCell.Tab.0.bottom/0.0.900.1600/900.0.1920.1040@900.0.1920.1040" timestamp="1594906988005" />
+    <state width="1864" height="262" key="GridCell.Tab.0.center" timestamp="1594906988005">
+      <screen x="900" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1864" height="262" key="GridCell.Tab.0.center/0.0.900.1600/900.0.1920.1040@900.0.1920.1040" timestamp="1594906988005" />
+    <state width="1864" height="262" key="GridCell.Tab.0.left" timestamp="1594906988004">
+      <screen x="900" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1864" height="262" key="GridCell.Tab.0.left/0.0.900.1600/900.0.1920.1040@900.0.1920.1040" timestamp="1594906988004" />
+    <state width="1864" height="262" key="GridCell.Tab.0.right" timestamp="1594906988005">
+      <screen x="900" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1864" height="262" key="GridCell.Tab.0.right/0.0.900.1600/900.0.1920.1040@900.0.1920.1040" timestamp="1594906988005" />
+    <state x="0" y="343" key="SettingsEditor" timestamp="1594897575350">
+      <screen x="0" y="0" width="900" height="1600" />
+    </state>
+    <state x="0" y="343" key="SettingsEditor/0.0.900.1600/900.0.1920.1040@0.0.900.1600" timestamp="1594897575350" />
+    <state x="1111" y="210" key="new project wizard" timestamp="1594902446936">
+      <screen x="900" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1111" y="210" key="new project wizard/0.0.900.1600/900.0.1920.1040@900.0.1920.1040" timestamp="1594902446936" />
+  </component>
+</project>
