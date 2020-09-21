@@ -24,4 +24,8 @@ export const all_template_list = () => {
     return http.requestQuickGet(apiUrl + '/cms/template/all')
 }
 
+export const add_page = params =>{
+    return http.requestPost(apiUrl + '/cms/page/add' , params)
+}
+
 

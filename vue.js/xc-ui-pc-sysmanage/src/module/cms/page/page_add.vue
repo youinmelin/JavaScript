@@ -2,7 +2,7 @@
 <template>
     <div>
         新增页面
-        <el-form   :model="pageForm" label-width="80px"  >
+<el-form  type="post" :model="pageForm" label-width="80px" :rules='pageFromRules' ref="pageForm">
   <el-form-item label="所属站点" prop="siteId">
     <el-select v-model="pageForm.siteId" placeholder="请选择站点">
       <el-option
@@ -48,6 +48,7 @@
 </el-form>
 <div slot="footer" class="dialog-footer">
   <el-button type="primary" @click="addSubmit" >提交</el-button>
+  <el-button type="primary" @click="go_back" >返回</el-button>
 </div>
     </div>
 
@@ -68,13 +69,65 @@ export default {
               pageType:'',
               pageCreateTime: new Date()
             },
+            // 表单校验
+            pageFromRules: {
+                siteId: [
+                    { required:true,message:'请选择站点', trigger: 'blur' }
+                ],
+                pageName: [
+                    {required:true,message:'请输入页面名称', trigger:'blur'}
+                ]
+            },
             siteList:[],
             templateList:[]
         }
     },
     methods:{
         addSubmit:function(){
-            this.saveTemplate()
+            this.$refs['pageForm'].validate((valid) => {
+                // 校验表单
+                if (valid) {
+                    // 确认提示
+                        this.$confirm('confirm', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        // type: 'warning'
+                        }).then(() => {
+                            cmsApi.add_page(this.pageForm).then(res=>{
+                                // 解析服务端响应内容
+                                if (res.success) {
+                                    // element提供的组件
+                                    this.$message.success("提交成功")
+                                    // 清空表单
+                                    this.$refs['pageForm'].resetFields()
+                                }else{
+                                    this.$message.error('提交失败')
+                                }
+                            })
+                        }).catch(() => {
+                            this.$message({
+                                type: 'info',
+                                message: '已取消'
+                            });          
+                        });
+                    // alert('submit!');
+                } 
+                // else {
+                //     console.log('表单校验失败');
+                //     return false;
+                // }
+            });
+            this.savePage()
+        },
+        go_back:function() {
+            // 设置路由
+            this.$router.push({
+                path:'/cms/page/list',
+                query:{
+                    current_page:this.$route.query.current_page,  // 取出路由中的参数
+                    siteId:this.$route.query.siteId
+                }
+            })
         },
         queryCmsSite:function(){
             cmsApi.all_site_list().then((result)=>{
@@ -86,9 +139,9 @@ export default {
                 this.templateList = result.queryResult.list
             })
         },
-        saveTemplate:function(params){
-            cmsApi.save_template()
-            alert("提交")    
+        savePage:function(params){
+            cmsApi.save_page()
+            // alert("提交")    
         }
     },
     mounted(){

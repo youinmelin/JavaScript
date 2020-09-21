@@ -14,7 +14,11 @@
         <button v-on:click="query">search</button>
 
         <!-- router-link: 实现链接跳转 渲染后就是<a标签 :to转到指定的路由地址 -->
-        <router-link class="mui-tab-item" :to="{path:'/cms/page/add'}">
+        <router-link class="mui-tab-item" :to="{path:'/cms/page/add',
+          query:{ // 跳转时携带参数
+            current_page:this.params.current_page,
+            siteId:this.params.siteId
+        }}">
           <el-button type="primary" size="small">add page</el-button>
         </router-link>
 
@@ -74,6 +78,14 @@ export default {
             this.params.current_page = page
             this.query()
         }
+    },
+    created() {
+      // 钩子方法：dom渲染之前执行
+      // 如果跳转过来的路由有参数，就接收并给数据对象赋值
+
+      this.params.current_page = Number.parseInt(this.$route.query.current_page || 1 )
+      this.params.siteId =  this.$route.query.siteId || ''
+
     },
     mounted(){
       // 钩子方法：mounted，当DOM元素渲染完成后调用
