@@ -2,7 +2,9 @@ Vue.js webpack
 
 # 安装
 ## 简单方法：
-	网页中直接引入vue.js
+
+网页中直接引入vue.js
+
 	<script src="vue.min.js"></script>
 ## 对于大型项目的方法
 		使用npm管理依赖，借助webpack打包工具
@@ -80,9 +82,9 @@ Vue.js webpack
 			}
         }
     });
-
-```
 </script>
+```
+
 
 ## 利用webpack分模块开发
 html文件和js脚本分开开发，将所有js方法打包到统一的js文件中
@@ -98,7 +100,13 @@ html文件和js脚本分开开发，将所有js方法打包到统一的js文件�
     - 进入当前目录的命令行窗口，执行"webpack main.js build.js"
     - 会打包成build.js文件
 - 4. 使用webpack包
-    - 在html页面文件中引入刚生成的文件 <script src="build.js"></script>
+    - 在html页面文件中引入刚生成的文件 
+	
+	    ```
+	    <script src="build.js"></script>
+	    ```
+	
+	    
 	
 ## 利用webpack-dev-server
 webpack-dev-server开发服务器，它的功能可以实现热加载 并且自动刷新浏览器。
@@ -127,18 +135,18 @@ cnpm install webpack@3.6.0 webpack-dev-server@2.9.1 html-webpack-plugin@2.30.1 -
 	```js
 	var htmlwp = require('html‐webpack‐plugin');
 	module.exports={
-    	entry:'./src/main.js',  //指定打包的入口文件
-    	output:{
+	    	entry:'./src/main.js',  //指定打包的入口文件
+	    	output:{
         path : __dirname+'/dist',  // 注意：__dirname表示webpack.config.js所在目录的绝对路径
         filename:'build.js'    //输出文件     
-    	},
-    	plugins:[
-        	new htmlwp({
-           	 title: '首页',  //生成的页面标题<head><title>首页</title></head>
-           	 filename: 'index.html', //webpack‐dev‐server在内存中生成的文件名称，自动将build注入到这个页面底部，才能实现自动刷新功能
-           	 template: 'vue_02.html' //根据index1.html这个模板来生成(这个文件请程序员自己生成)
-       		 })
-   		 ]
+	    	},
+	    	plugins:[
+	        	new htmlwp({
+	           	 title: '首页',  //生成的页面标题<head><title>首页</title></head>
+	           	 filename: 'index.html', //webpack‐dev‐server在内存中生成的文件名称，自动将build注入到这个页面底部，才能实现自动刷新功能
+	           	 template: 'vue_02.html' //根据index1.html这个模板来生成(这个文件请程序员自己生成)
+	       		 })
+	   		 ]
 	}
 	```
 - 使用
