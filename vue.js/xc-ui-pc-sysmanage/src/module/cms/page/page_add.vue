@@ -93,11 +93,11 @@ export default {
                         // 解析服务端响应内容
                         if (res.success) {
                             // element提供的组件
-                            this.$message.success("提交成功")
+                            this.$message.success(res.message)
                             // 清空表单
                             this.$refs['pageForm'].resetFields()
                         }else{
-                            this.$message.error('提交失败')
+                            this.$message.error(res.message)
                         }
                     })
                 } 
