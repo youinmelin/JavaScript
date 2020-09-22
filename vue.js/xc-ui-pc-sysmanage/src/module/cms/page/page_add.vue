@@ -84,38 +84,23 @@ export default {
     },
     methods:{
         addSubmit:function(){
+            // 对表单进行校验 与表单属性ref="pageForm"对应
             this.$refs['pageForm'].validate((valid) => {
                 // 校验表单
                 if (valid) {
                     // 确认提示
-                        this.$confirm('confirm', '提示', {
-                        confirmButtonText: '确定',
-                        cancelButtonText: '取消',
-                        // type: 'warning'
-                        }).then(() => {
-                            cmsApi.add_page(this.pageForm).then(res=>{
-                                // 解析服务端响应内容
-                                if (res.success) {
-                                    // element提供的组件
-                                    this.$message.success("提交成功")
-                                    // 清空表单
-                                    this.$refs['pageForm'].resetFields()
-                                }else{
-                                    this.$message.error('提交失败')
-                                }
-                            })
-                        }).catch(() => {
-                            this.$message({
-                                type: 'info',
-                                message: '已取消'
-                            });          
-                        });
-                    // alert('submit!');
+                    cmsApi.add_page(this.pageForm).then(res=>{
+                        // 解析服务端响应内容
+                        if (res.success) {
+                            // element提供的组件
+                            this.$message.success("提交成功")
+                            // 清空表单
+                            this.$refs['pageForm'].resetFields()
+                        }else{
+                            this.$message.error('提交失败')
+                        }
+                    })
                 } 
-                // else {
-                //     console.log('表单校验失败');
-                //     return false;
-                // }
             });
             this.savePage()
         },
@@ -139,10 +124,10 @@ export default {
                 this.templateList = result.queryResult.list
             })
         },
-        savePage:function(params){
-            cmsApi.save_page()
-            // alert("提交")    
-        }
+        // savePage:function(params){
+        //     cmsApi.save_page()
+        //     // alert("提交")    
+        // }
     },
     mounted(){
         this.queryCmsSite()

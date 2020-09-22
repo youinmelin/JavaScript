@@ -28,4 +28,19 @@ export const add_page = params =>{
     return http.requestPost(apiUrl + '/cms/page/add' , params)
 }
 
+// 根据id查询页面
+export const page_get = id => {
+    // http://localhost:31001/cms/page/getCmsPage/5a92141cb00ffc5a448ff1a0
+    return http.requestQuickGet(apiUrl + '/cms/page/getCmsPage/' + id)
+}
+
+// 修改页面
+export const page_modify = (id,params) => {
+    return http.requestPut(apiUrl + '/cms/page/modify/'+ id  , params)
+}
+
+// del页面
+export const page_del = (id) => {
+    return http.requestDelete(apiUrl + '/cms/page/del/'+ id)
+}
 

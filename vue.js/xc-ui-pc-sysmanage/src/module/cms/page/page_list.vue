@@ -15,27 +15,31 @@
 
         <!-- router-link: 实现链接跳转 渲染后就是<a标签 :to转到指定的路由地址 -->
         <router-link class="mui-tab-item" :to="{path:'/cms/page/add',
-          query:{ // 跳转时携带参数
-            current_page:this.params.current_page,
-            siteId:this.params.siteId
-        }}">
+                query:{ current_page:this.params.current_page, siteId:this.params.siteId }}">
           <el-button type="primary" size="small">add page</el-button>
         </router-link>
 
       </el-form>
 
       <el-table :data="list" stripe style="width: 100%">
-        <el-table-column prop="pageName" label="pageName" width="470"/>
+        <el-table-column prop="pageName" label="pageName" width="270"/>
         <el-table-column prop="pageAliase" label="pageAliase" width="180"/>
-        <el-table-column prop="pageType" label="pageType" width="80"/>
+        <el-table-column prop="pageType" label="pageType" width="120"/>
         <el-table-column prop="pageCreateTime" label="pageCreateTime" width="280"/>
+        <el-table-column label="操作" width="120"> 
+          <!-- slot-scope="page"  从插槽中取得列表数据 -->
+          <template slot-scope="page">
+                <el-button  type="text" size="small" @click="modify(page.row.pageId)"> modify </el-button>
+                <el-button  type="text" size="small" @click="del(page.row.pageId)"> del </el-button>
+          </template>
+    </el-table-column>
       </el-table>
     <el-pagination :page-size="params.page_size" :pager-count="11" 
-    :current-page="params.current_page" layout="prev, pager, next" :total="total"
-    @current-change="changePage">
-</el-pagination>
-page size: <input type="text" v-model="params.page_size"><button @click="query">confirm</button>
-total: {{total}} records, current_page: {{params.current_page}}
+        :current-page="params.current_page" layout="prev, pager, next" :total="total"
+        @current-change="changePage">
+  </el-pagination>
+  page size: <input type="text" v-model="params.page_size"><button @click="query">confirm</button>
+  total: {{total}} records, current_page: {{params.current_page}}
     </div>
 </template>
 <script>
@@ -77,7 +81,33 @@ export default {
             // alert('change page')
             this.params.current_page = page
             this.query()
-        }
+        },
+        modify:function(pageId) {  
+          // 进入修改页面
+          this.$router.push({  // 改变路由，得以跳转页面
+            // 通过url传参
+            path:'/cms/page/modify/' + pageId,
+            // query:{
+            //   page: this.params.current_page,
+            //   siteId: thisparams.siteId
+            // }
+          })
+        },
+        del:function(pageId) {
+              // this.$confirm('confirm','notice',{}).then(()=>{})
+              // 删除之前弹框提示
+              this.$confirm('confirm','notice',{}).then(()=>{
+                cmsApi.page_del(pageId).then(res=>{
+                if(res.succeess) {
+                  this.$message.succeess(res.message)
+                }else{
+                  this.$message.error(res.message)
+                }
+                this.query()
+              })
+          
+          })
+        },
     },
     created() {
       // 钩子方法：dom渲染之前执行
