@@ -20,7 +20,7 @@ export const all_site_list = () => {
 }
 
 export const all_template_list = () => {
-    // 请求服务端site查询的接口
+    // 请求服务端template查询的接口
     return http.requestQuickGet(apiUrl + '/cms/template/all')
 }
 

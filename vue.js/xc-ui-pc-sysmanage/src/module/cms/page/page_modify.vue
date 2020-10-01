@@ -131,7 +131,17 @@
             });
           }
         });
-      }
+      },
+      queryCmsSite:function(){
+            cmsApi.all_site_list().then((result)=>{
+                this.siteList = result.queryResult.list
+            })
+        },
+        queryCmsTemplate:function(){
+            cmsApi.all_template_list().then((result)=>{
+                this.templateList = result.queryResult.list
+            })
+        },
 
     },
     created: function () {
@@ -147,28 +157,8 @@
     },
     mounted:function(){
 
-      //初始化站点列表
-      this.siteList = [
-        {
-          siteId:'5a751fab6abb5044e0d19ea1',
-          siteName:'门户主站'
-        },
-        {
-          siteId:'102',
-          siteName:'测试站'
-        }
-      ]
-      //模板列表
-      this.templateList = [
-        {
-          templateId:'5a962b52b00ffc514038faf7',
-          templateName:'首页'
-        },
-        {
-          templateId:'5a962bf8b00ffc514038fafa',
-          templateName:'轮播图'
-        }
-      ]
+      this.queryCmsSite()
+      this.queryCmsTemplate()
     }
   }
 </script>

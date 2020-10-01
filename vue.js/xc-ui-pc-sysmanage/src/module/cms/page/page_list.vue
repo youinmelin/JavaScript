@@ -31,6 +31,7 @@
           <template slot-scope="page">
                 <el-button  type="text" size="small" @click="modify(page.row.pageId)"> modify </el-button>
                 <el-button  type="text" size="small" @click="del(page.row.pageId)"> del </el-button>
+                <el-button  type="text" size="small" @click="preview(page.row.pageId)"> preview </el-button>
           </template>
     </el-table-column>
       </el-table>
@@ -55,9 +56,9 @@ export default {
         "total": 0,
         params:{
           'current_page':1,
-          'page_size':3,
+          'page_size':12,
           'siteId':'',
-          'pageAliase':''
+          'pageAliase':'',
         }
       }
     },
@@ -108,6 +109,9 @@ export default {
           
           })
         },
+        preview: function(pageId){
+          window.open('http://www.xuecheng.com/cms/preview/' + pageId)
+        }
     },
     created() {
       // 钩子方法：dom渲染之前执行
