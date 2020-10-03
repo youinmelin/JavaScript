@@ -26,12 +26,13 @@
         <el-table-column prop="pageAliase" label="pageAliase" width="180"/>
         <el-table-column prop="pageType" label="pageType" width="120"/>
         <el-table-column prop="pageCreateTime" label="pageCreateTime" width="280"/>
-        <el-table-column label="操作" width="120"> 
+        <el-table-column label="操作" width="220"> 
           <!-- slot-scope="page"  从插槽中取得列表数据 -->
           <template slot-scope="page">
                 <el-button  type="text" size="small" @click="modify(page.row.pageId)"> modify </el-button>
                 <el-button  type="text" size="small" @click="del(page.row.pageId)"> del </el-button>
                 <el-button  type="text" size="small" @click="preview(page.row.pageId)"> preview </el-button>
+                <el-button  type="text" size="small" @click="post(page.row.pageId)"> post </el-button>
           </template>
     </el-table-column>
       </el-table>
@@ -111,6 +112,15 @@ export default {
         },
         preview: function(pageId){
           window.open('http://www.xuecheng.com/cms/preview/' + pageId)
+        },
+        post:function(pageId) {
+          cmsApi.page_post(pageId).then(res=>{
+            if(res.success){
+              this.$message.success(res.message + '请稍后查看结果')
+            } else {
+              this.$message.error(res.message)
+            }
+          })
         }
     },
     created() {

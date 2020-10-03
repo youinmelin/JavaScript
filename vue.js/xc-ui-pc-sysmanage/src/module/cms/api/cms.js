@@ -43,4 +43,8 @@ export const page_modify = (id,params) => {
 export const page_del = (id) => {
     return http.requestDelete(apiUrl + '/cms/page/del/'+ id)
 }
+// post发布页面
+export const page_post = (id) => {
+    return http.requestPost(apiUrl + '/cms/page/postPage/'+ id)
+}
 
