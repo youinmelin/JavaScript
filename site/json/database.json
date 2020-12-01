@@ -1,6 +1,6 @@
 { 
-    "servername":"localhost", 
-    "username":"tzu860zl62", 
+    "servername":"172.17.0.2", 
+    "username":"root", 
     "password":"#q}!{CDAB", 
-    "database_name":"tzu860zl62" 
+    "database_name":"youinme" 
 }
