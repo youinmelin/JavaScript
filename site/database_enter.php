@@ -10,7 +10,8 @@
 	$username = $database_array["username"];
     // echo $username;
     // $password = decrypt($database_array["password"],$key);
-    $password = "(LMa4c7^_DL}fx3";
+	$password = $database_array["password"];
+    // $password = "(LMa4c7^_DL}fx3";
 	$database_name = $database_array["database_name"];
 	$use_query = "use ".$database_name.";";
 
