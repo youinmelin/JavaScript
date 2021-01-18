@@ -1,0 +1,45 @@
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>获取图片列表</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />   
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li>
+          <img v-for="imgItem in imgList" v-bind:src="imgItem.img" alt="" width="100%" height="100%"/>
+        </li>
+      </ul>
+    </div>   
+  </body>
+  <script src="//cdn.bootcss.com/vue/2.1.0/vue.js" type="text/javascript" charset="utf-8"></script>
+  <script src="//cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    var demo=new Vue({
+      el:'#app',
+      data: {
+        imgList:[],
+        getImgUrl: ''  //存数据接口       
+      },
+      created: function(){
+        this.getImg()       //定义方法
+      },
+      methods: {
+        getImg: function(){
+          var that = this;   
+          that.$http({      //调用接口
+            method:'GET',
+            url:this.getImgUrl //this指data
+          }).then(function(response){ //接口返回数据
+            this.imgList=response.data;            
+          },function(error){
+          })
+        }
+      }
+    })
+  </script>
+</html>

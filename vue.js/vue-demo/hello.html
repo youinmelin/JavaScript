@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "app">
+        <h1>
+            <!-- v-model model-view双向绑定,用于用户互动场景 -->
+            <input type="text" v-model="num" name="" id="">
+            <!-- @事件绑定 是v-on:的简写 -->
+            <input type="button" @click="num++" value="++">
+            <hr>
+           <br>{{name}} is vary handsome!
+            <!-- v-test(安全) v-html(不安全) 用来代替差值表达式{{}} -->
+           <br><span v-text="name"></span> is vary handsome!  
+           <br>handsome + {{num}} 
+        </h1>
+        <hr>
+        band v-model:  {{score}}
+            <input type="radio" value=5  v-model="score"/>5分
+            <input type="radio" value=4 v-model="score"/>4分
+            <input type="radio" value=3 v-model="score"/>3分
+    <ul>
+        <li v-for="user in users">
+            {{user.name}} : {{user.gender}} : {{user.age}} 
+        </li>
+    </ul>
+    <table>
+    <tr>
+        <td>name</td>
+        <td>gender</td>
+        <td>age</td>
+    </tr>
+    <tr v-for="(u,i) in users">
+        <td>{{i + 1}}</td>
+        <td>{{u.name}}</td>
+        <td>{{u.gender}}</td>
+        <td>{{u.age}}</td>
+    </tr>
+    </table>
+    </div>
+
+   <script src="node_modules/vue/dist/vue.min.js"></script> 
+   <script>
+        // vue实例
+       const app = new Vue({
+            el:"#app", // element, 指定vue作用的标签
+            data:{
+                name:"youinme",
+                num: 1,
+                score:"",
+                msg:"",
+            },
+            methods:{
+                // convert:function () { axios.get("api/sysUser/getSomething").then(res => { this.title = res.data; })
+             },
+            created(){
+                // 向后台发起ajax请求, 完成data数据初始化
+                this.names = "you"  // this 是当前vue对象(app)
+                this.users=[
+                {name:'柳岩', gender:'女', age: 21},
+                {name:'虎哥', gender:'男', age: 30},
+                {name:'范冰冰', gender:'女', age: 24},
+                {name:'刘亦菲', gender:'女', age: 18},
+                {name:'古力娜扎', gender:'女', age: 25}
+                ]
+            }
+       }); 
+
+   </script>
+</body>
+</html>
